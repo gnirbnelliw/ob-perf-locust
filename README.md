@@ -1,8 +1,14 @@
 # About
-Run configuration-based load tests using `Python` and `Locust`. 
+Run configuration-based load tests using `Python` and `Locust` in a few simple steps:
+1. Install
+2. Configure
+3. Run
+4. Observe
+5. Halt
+6. Rerun (after halting)
 
 
-## Install
+## 1. Install
 Set up the Python virtual env. Note: if you've gone through this before, just skip ahead to installing python libraries.
 
 - Create and activate a virtual env
@@ -31,8 +37,8 @@ playwright -V   # Version 1.50.0
 ```
 
 
-## Configure
-Set the following:
+## 2. Configure
+Open up `config.py` and set the following:
 ```python
 # This is the target site
 HOST_URL = "https://17619-test.preview.onebrief.com"
@@ -45,7 +51,7 @@ SUPERVISOR_PASSWORD = "super-unguessable-password"
 ADDITIONAL_USER_IDS = [1255]
 ```
 
-## Run 
+## 3. Run 
 - Type this, then hit `ENTER`
 ```bash
 locust -f locustfile.py
@@ -68,7 +74,7 @@ locust -f locustfile.py
   - Edit the order
   - etc...
 
-## Observe
+## 4. Observe
 Assuming you've added your user id to the list of `ADDITIONAL_USER_IDS` in `config.py` and clicked `start`, do this:
 - Locust web UI => `Logs`
 - Wait for the log output to print the URL to the shared plan
@@ -76,24 +82,18 @@ Assuming you've added your user id to the list of `ADDITIONAL_USER_IDS` in `conf
 - Login and navigate to the Shared Order
 - Wait for the arrival of the Locust users
 
-## Stopping the test
-- `CTRL+C` in the console will kill the process
+## 5. Halt
+- Stop the Locust test at any time `CTRL+C` in the console.
+- Deactivate the virtual environment with...
 
-
-# Deactivate the venv
-When you're all done, deactivate the virtual environment. 
 ```bash
 deactivate
 ```
 
-# Reactivate the venv
-If you want to run the locust tests again without having to re-install, just do this:
+## 6. Rerun (after halting)
+Assuming you've gone through the install once, just do this from the repo root:
+
 ```bash
 source venv/bin/activate
 locust -f locustfile.py
-```
-
-```
-docker build -t locust-load-test .
-docker run --rm -p 8089:8089 -v "$(pwd)/config:/app/config" locust-load-test
 ```
