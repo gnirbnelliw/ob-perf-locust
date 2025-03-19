@@ -474,7 +474,7 @@ async def create_cards_in_card_library(page: Page, totalCards: int = 10):
 
         # Click into the editor body and type
         await floating_form.get_by_test_id("editor-body").click()
-        await expect(active_editor).to_be_attached(timeout=ACTION_TIMEOUT)
+        await expect(active_editor).to_be_attached(timeout=ASSERTION_TIMEOUT)
         await active_editor.press_sequentially(card_text)
 
         # Wait until the active editor contains the text
