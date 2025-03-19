@@ -52,10 +52,16 @@ ADDITIONAL_USER_IDS = [1255]
 ```
 
 ## 3. Run 
-- Type this, then hit `ENTER`
+- Run the setup 
+```bash
+python setup.py
+```
+- Wait for Playwright to finish and close
+- Type this...
 ```bash
 locust -f locustfile.py
 ```
+- Then hit `ENTER` again
 - You'll see the Locust web ui open up on port `:8089`:
   - **Number of users** — This caps the number of <u>Locust threads</u>. If set to 5, each of the 5 threads will continuously create new Onebrief users.
   - **Ramp up** — Locust threads to spawn per second. 1 is fine.
