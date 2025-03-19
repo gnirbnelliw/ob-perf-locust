@@ -89,7 +89,7 @@ deactivate
 # Reactivate the venv
 If you want to run the locust tests again without having to re-install, just do this:
 ```bash
-source ~/py_envs/bin/activate
+source venv/bin/activate
 locust -f locustfile.py
 ```
 
