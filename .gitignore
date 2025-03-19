@@ -1,0 +1,81 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.db
+*.sqlite
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.eggs
+*.log
+
+# Locust
+locustfile.pyc
+.locust/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+venv.bak/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+
+# System Files
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Coverage reports
+coverage/
+*.cover
+.coverage*
+*.hypothesis/
+nosetests.xml
+coverage.xml
+*.coveragerc
+
+# PyInstaller
+*.spec
+
+# Pytest
+.cache/
+
+# mypy
+.mypy_cache/
+
+# Bandit
+.bandit
+
+# Other
+*.log
+*.out
+
+# gpg 
+*.gpg
+
+# All images at the top level 
+/*.png
+
+# Json files at the top level 
+/*.json
+
+# No playwright specs at the top level
+/*playwright*
